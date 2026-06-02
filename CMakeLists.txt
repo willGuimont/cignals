@@ -13,3 +13,6 @@ add_executable(cignals
 target_include_directories(cignals PRIVATE src)
 target_compile_definitions(cignals PRIVATE _POSIX_C_SOURCE=200809L)
 target_link_libraries(cignals PRIVATE PkgConfig::LIBNOTIFY)
+
+install(TARGETS cignals RUNTIME DESTINATION bin)
+install(FILES completions/cignals.bash DESTINATION share/bash-completion/completions RENAME cignals)

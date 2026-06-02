@@ -16,6 +16,24 @@ cignals set interval N
 The daemon stores its runtime files under `$XDG_RUNTIME_DIR/cignals` when available,
 or `/tmp/cignals-<uid>` as a fallback.
 
+## Bash autocomplete
+
+The repo includes a Bash completion script at `completions/cignals.bash`.
+
+For a one-off shell session:
+
+```bash
+source completions/cignals.bash
+```
+
+For a system-wide installation with bash-completion:
+
+```bash
+sudo install -Dm644 completions/cignals.bash /usr/share/bash-completion/completions/cignals
+```
+
+It completes the top-level commands, `--daemon`, `--interval`, and the `get`/`set` `interval` subcommand.
+
 ## Build
 
 Debug:
